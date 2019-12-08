@@ -1,0 +1,13 @@
+Package: ymctools
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Mengcheng Yao
+Maintainer: The package maintainer <yaomengcheng@hotmail>
+Description: just a test.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+  ggplot2
+RoxygenNote: 6.1.1
