@@ -30,6 +30,9 @@ rawParse<-function(data,top_genes=50,stats='mean'){
       temp<-data.frame(rowMeans(counts),i,stringsAsFactors = FALSE)
     }else if(stats=='median'){
       temp<-data.frame(apply(counts, 1, FUN = median),i,stringsAsFactors = FALSE)
+    }else if(stats=='pct'){
+      #b<-as.matrix(apply(a,1,function(x){round(length(x[x!=0])/ncol(a),digit = 3)}))
+       temp<-data.frame(apply(counts,1,function(x){round(length(x[x!=0])/ncol(a),digit = 3)}))
     }else{
       print('error stats option')
     }
