@@ -17,7 +17,7 @@
 #' @importFrom progress progress_bar
 #' @return A dataframe of the data
 #' @export
-rawParse<-function(data,top_genes=50,stats='mean'){
+rawParse<-function(data,top_genes=50,stats='mean',pct=0.2){
   res=NULL
   cell_group<-unique(data$cell_type)
   pb <- progress::progress_bar$new(total = length(cell_group))
@@ -30,6 +30,10 @@ rawParse<-function(data,top_genes=50,stats='mean'){
       temp<-data.frame(rowMeans(counts),i,stringsAsFactors = FALSE)
     }else if(stats=='median'){
       temp<-data.frame(apply(counts, 1, FUN = median),i,stringsAsFactors = FALSE)
+    }else if(stats=='pct'){
+      #b<-as.matrix(apply(a,1,function(x){round(length(x[x!=0])/ncol(a),digit = 3)}))
+      temp<-data.frame(apply(counts,1,function(x){round(length(x[x!=0])/ncol(counts),digit = 3)}),i)
+      temp<-temp[temp[,1]>=as.numeric(pct),]
     }else{
       print('error stats option')
     }
