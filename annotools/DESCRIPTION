@@ -1,0 +1,19 @@
+Package: annotools
+Type: Package
+Title: compareCluster and cellmarker annotation for single cell(Based on loacal GO Term database)
+Version: 0.1.0
+Author: Mengcheng Yao
+Maintainer: The package maintainer <yaomengcheng@hotmail>
+Description: compare single cell marker list from seurat with GO Term based on local GO database and annotation for single cell from 
+            single cell marker list from  seurat.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+  ggplot2,
+  Seurat,
+  clusterProfiler(>= 3.15.2),
+  data.table,
+  dplyr,
+  vroom
+RoxygenNote: 7.0.2
