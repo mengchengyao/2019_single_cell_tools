@@ -4,14 +4,14 @@
 \alias{ensemble2symbol}
 \title{Title get gene symbol from ensemble name}
 \usage{
-ensemble2symbol(genefile, term2gene, sep = "\\t")
+ensemble2symbol(genefile, term2gene, sep = "\\t", type = "go")
 }
 \arguments{
 \item{genefile}{genes.tsv from cellranger output}
 
 \item{term2gene}{data.fram, the first col is Go term names and the second col is Gene name}
 
-\item{sep}{genefile sep,default sep="\t"}
+\item{sep}{genefile sep, default \t}
 }
 \value{
 term2gene  data.fram, the first col is Go term names and the second col is Gene name(symbol)
@@ -20,5 +20,5 @@ term2gene  data.fram, the first col is Go term names and the second col is Gene 
 Title get gene symbol from ensemble name
 }
 \examples{
-term2gene<-ensemble2symbol(genefile,term2gene)
+go_term2gene_symbol<-ensemble2symbol(genefile,term2gene,sep="\t",type='go')
 }

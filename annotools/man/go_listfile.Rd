@@ -4,12 +4,18 @@
 \alias{go_listfile}
 \title{Title go_listfile}
 \usage{
-go_listfile(species, indir = "/annoroad/bioinfo/PMO/database/config_database")
+go_listfile(
+  species,
+  indir = "/annoroad/bioinfo/PMO/database/config_database",
+  type = "GO_annotate"
+)
 }
 \arguments{
 \item{species}{the ref gene annotation from annorad loacal database(Go Term)}
 
 \item{indir}{the database indir}
+
+\item{type}{the type for file[GO_annotate or KEGG_annotate]}
 }
 \value{
 go annotation file name
@@ -18,5 +24,5 @@ go annotation file name
 Title go_listfile
 }
 \examples{
-go_list<-go_listfile("Mus_musculus.GRCm38.90.chr",indir='/annoroad/bioinfo/PMO/database/config_database')
+go_list<-go_listfile("Mus_musculus.GRCm38.90.chr",indir='/annoroad/bioinfo/PMO/database/config_database',type="GO_annotate")
 }

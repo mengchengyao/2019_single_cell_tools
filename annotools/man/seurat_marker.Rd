@@ -19,3 +19,6 @@ list,
 \description{
 Title seurat_marker
 }
+\examples{
+ seurat_marker(markerfile,sep=",",colname="cluster")
+}
